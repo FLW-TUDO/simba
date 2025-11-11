@@ -26,11 +26,11 @@ const dataSets: Entity[] = [
     records: MasterDataParser.parseMachines(),
     createRecord: async (data: any) => await prisma.machine.create({ data }),
   },
-  {
+/*  {
     name: 'nft',
     records: MasterDataParser.parseNfts(),
     createRecord: async (data: any) => await prisma.nft.create({ data }),
-  },
+  },*/
   {
     name: 'product',
     records: MasterDataParser.parseProducts(),

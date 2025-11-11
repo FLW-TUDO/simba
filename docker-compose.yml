@@ -71,13 +71,19 @@ services:
   # CPPS-Scheduler #
   ##################
   cpps-scheduler:
-    image: container-registry.gitlab.cc-asp.fraunhofer.de/skala/ap3/cpps/ki-und-scheduling/cpps-scheduler:v0.1.6-rc2
+    build:
+      context: ../ki-und-scheduling
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - FMS_URL=http://host.docker.internal:8081
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     logging:
       options:
         max-size: 10m
         max-file: '3'
-    ports:
-      - '8080:8080'
 
   #########
   # UTILS #
