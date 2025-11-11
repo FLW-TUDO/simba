@@ -18,6 +18,6 @@ export class ProductionComponent {
   streamUrl: SafeResourceUrl;
 
   constructor(private readonly sanitizer: DomSanitizer) {
-    this.streamUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://unity.flw.mb.tu-dortmund.de');
+    this.streamUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://unity-hall.flw.mb.tu-dortmund.de');
   }
 }
