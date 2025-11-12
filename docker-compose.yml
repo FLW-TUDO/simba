@@ -77,13 +77,47 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - FMS_URL=http://host.docker.internal:8081
+      - FMS_URL=http://fms_skala:8081     # service DNS
+      - FINISH_BASE_URL=http://host.docker.internal:3002
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    depends_on:
+      fms_skala:
+        condition: service_healthy         # wait until FMS /status works
+    restart: unless-stopped
     logging:
       options:
         max-size: 10m
-        max-file: '3'
+        max-file: "3"
+
+  ########
+  # FMS  #
+  ########
+  fms_skala:
+    build:
+      context: ../fms_skala
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+      - "8082:8082" # GUI
+
+    environment:
+      - GUI_URL=http://host.docker.internal:8082
+      - ROS_DOMAIN_ID=101
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8081/status"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+
 
   #########
   # UTILS #
