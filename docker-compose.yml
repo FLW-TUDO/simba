@@ -119,6 +119,26 @@ services:
         max-file: "3"
 
 
+  ############
+  # LASERS   #
+  ############
+  lasers_skala:
+    build:
+      context: ../lars_interface      # adjust if your compose is elsewhere
+      dockerfile: Dockerfile
+    environment:
+      - ROS_DOMAIN_ID=101
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+
+
+
   #########
   # UTILS #
   #########
