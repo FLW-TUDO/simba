@@ -1,4 +1,4 @@
-/*!
+/*
  * Copyright Fraunhofer Institute for Material Flow and Logistics
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -6,13 +6,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-.container-offers-expired {
-  background-color: white;
-  padding: 2.5em;
-}
-
-.accept-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export enum SchedulingViewEnum {
+  WEEK = 'week',
+  DAY = 'day',
+  HOUR = 'hour',
 }

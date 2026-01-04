@@ -14,3 +14,4 @@ export const LANGUAGEFORMATS = {
 };
 
 export const FILTERDATEFORMAT = 'YYYY-MM-DDTHH:mm:ssZ';
+export const TIMEZONEFORMAT = 'UTC'

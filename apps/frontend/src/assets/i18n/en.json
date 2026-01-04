@@ -32,10 +32,10 @@
     },
 
     "Status": {
-      "Open": "open",
-      "Planned": "planned",
-      "Scheduled": "scheduled",
-      "Produced": "produced"
+      "Open": "Open",
+      "Planned": "Planned",
+      "Scheduled": "Scheduled",
+      "Produced": "Produced"
     },
     "Details": {
       "Table": {
@@ -79,11 +79,25 @@
     "CalendarWeek": "Calendar week"
   },
 
+  "Production": {
+    "ProductionPlan": "Production plan",
+    "CalenderWeek": "Calender week",
+    "Utilization": "Utilization",
+    "Start": "Production start",
+    "End": "Production end",
+    "Price": "Price",
+    "Product": "Product",
+    "Amount": "Amount",
+    "Week": "Week",
+    "Day": "Day",
+    "Hour": "Hour"
+  },
+
   "PaymentStatus": {
-    "Open": "open",
-    "Financed": "financed",
-    "Paid": "paid",
-    "Exceeded": "exceeded",
+    "Open": "Open",
+    "Financed": "Financed",
+    "Paid": "Paid",
+    "Exceeded": "Exceeded",
     "PaymentStateChangeSuccessfulSnackBarMessage": "Status changed successfully",
     "PaymentStateErrorSnackBarMessage": "Something went wrong. Your status could not be changed. :("
   },
@@ -198,7 +212,8 @@
     "GetUnpaidStatisticsFailed": "No unpaid invoices were found.",
     "GetInvoicesFailed": "No invoices were found.",
     "GetCompaniesFailed": "No companies were found.",
-    "GetProductsFailed": "No products were found."
+    "GetProductsFailed": "No products were found.",
+    "GetCurrentSchedulingFailed": "Scheduling could not be found."
   },
 
   "CalendarWeek": "CW",
